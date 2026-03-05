@@ -1,155 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sayali Vaidya | AI/ML Engineer & Data Scientist</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * {margin:0; padding:0; box-sizing:border-box;}
-    body {font-family:'Roboto', sans-serif; background:#fff; color:#333; line-height:1.6; scroll-behavior:smooth;}
-    a {text-decoration:none; color:#fff;}
-    h1,h2,h3 {color:#4B0082;}
-    h2 {margin-bottom:25px; border-bottom:3px solid #FF69B4; display:inline-block; padding-bottom:5px;}
-    section {padding:50px 20px; max-width:1000px; margin:auto;}
-    .btn {display:inline-block; padding:10px 20px; background:linear-gradient(45deg,#FF69B4,#8A2BE2); color:white; border-radius:8px; font-weight:bold; transition:0.3s; cursor:pointer; margin-bottom:10px;}
-    .btn:hover {transform:translateY(-5px) scale(1.05);}
-    
-    /* Header */
-    header {display:flex; flex-direction:row; gap:40px; background:linear-gradient(135deg,#fff,#FFE6F0); padding:60px 20px; border-bottom:4px solid #FF69B4;}
-    .header-left {flex:0 0 200px;}
-    .header-left .profile-img {width:180px; height:180px; border-radius:50%; border:5px solid #FF69B4; object-fit:cover; transition:0.5s;}
-    .header-left .profile-img:hover {transform:scale(1.1) rotate(5deg);}
-    .header-right {flex:1; display:flex; flex-direction:column; justify-content:center;}
-    .header-right h1 {font-size:2.8em; margin-bottom:10px;}
-    .header-right p {margin:5px 0; font-weight:500;}
-    .header-right a {color:#FF69B4; font-weight:bold;}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sayali Vaidya | AI/ML Engineer & Data Scientist</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family:'Roboto', sans-serif; background:#fff; color:#333; line-height:1.6; scroll-behavior:smooth;}
+a {text-decoration:none; color:#fff;}
+h1,h2,h3 {color:#4B0082;}
+h2 {margin-bottom:25px; border-bottom:3px solid #FF69B4; display:inline-block; padding-bottom:5px;}
+section {padding:50px 20px; max-width:1000px; margin:auto;}
+.btn {display:inline-block; padding:10px 20px; background:linear-gradient(45deg,#FF69B4,#8A2BE2); color:white; border-radius:8px; font-weight:bold; transition:0.3s; cursor:pointer; margin-bottom:10px;}
+.btn:hover {transform:translateY(-5px) scale(1.05);}
 
-    /* Skills */
-    .skills-container {display:flex; flex-wrap:wrap; gap:30px;}
-    .skills-left, .skills-right {flex:1;}
-    .skill-bar {background:#f0f0f0; border-radius:20px; overflow:hidden; position:relative; height:25px; margin-bottom:15px;}
-    .skill-bar span {display:block; height:100%; width:0; background:linear-gradient(90deg,#FF69B4,#8A2BE2); border-radius:20px; text-align:right; padding-right:10px; color:white; font-weight:bold; line-height:25px; transition:1s;}
+/* Header */
+header {display:flex; flex-direction:row; gap:40px; background:linear-gradient(135deg,#fff,#FFE6F0); padding:60px 20px; border-bottom:4px solid #FF69B4;}
+.header-left {flex:0 0 200px;}
+.header-left .profile-img {width:180px; height:180px; border-radius:50%; border:5px solid #FF69B4; object-fit:cover; transition:0.5s;}
+.header-left .profile-img:hover {transform:scale(1.1) rotate(5deg);}
+.header-right {flex:1; display:flex; flex-direction:column; justify-content:center;}
+.header-right h1 {font-size:2.8em; margin-bottom:10px;}
+.header-right p {margin:5px 0; font-weight:500;}
+.header-right a {color:#FF69B4; font-weight:bold;}
 
-    /* Projects & Internships */
-    .cards {display:flex; flex-direction:column; gap:30px; margin-top:30px;}
-    .card {background:#fff; border:2px solid #FF69B4; border-radius:15px; padding:25px 20px; box-shadow:0 4px 15px rgba(0,0,0,0.1); transition:0.5s; position:relative;}
-    .card:hover {transform:translateY(-5px) scale(1.02); box-shadow:0 6px 20px rgba(0,0,0,0.15);}
-    .present-block {display:inline-block; background:#FF69B4; color:white; padding:3px 8px; border-radius:50px; font-size:0.85em; margin-left:10px;}
-    .project-tools {display:flex; flex-wrap:wrap; gap:10px; margin-top:10px;}
-    .project-tools span {background:#FFE6F0; padding:5px 10px; border-radius:8px; font-size:0.85em; font-weight:bold;}
-    .project-link {margin-top:10px; display:inline-block; color:#fff; background:linear-gradient(45deg,#FF69B4,#8A2BE2); padding:8px 15px; border-radius:8px; font-weight:bold; transition:0.3s;}
-    .project-link:hover {transform:translateY(-3px) scale(1.05);}
+/* Skills */
+.skills-container {display:flex; flex-wrap:wrap; gap:30px;}
+.skills-left, .skills-right {flex:1;}
+.skill-bar {background:#f0f0f0; border-radius:20px; overflow:hidden; position:relative; height:25px; margin-bottom:15px;}
+.skill-bar span {display:block; height:100%; width:0; background:linear-gradient(90deg,#FF69B4,#8A2BE2); border-radius:20px; text-align:right; padding-right:10px; color:white; font-weight:bold; line-height:25px; transition:1s;}
 
-    /* Work/Internship Icons */
-    .icon {margin-right:5px;}
-    .company-icon::before {content:'🏢';}
-    .location-icon::before {content:'📍';}
-    .calendar-icon::before {content:'📅';}
-    .remote-icon::before {content:'💻';}
+/* Projects & Internships */
+.cards {display:flex; flex-direction:column; gap:30px; margin-top:30px;}
+.card {background:#fff; border:2px solid #FF69B4; border-radius:15px; padding:25px 20px; box-shadow:0 4px 15px rgba(0,0,0,0.1); transition:0.5s; position:relative;}
+.card:hover {transform:translateY(-5px) scale(1.02); box-shadow:0 6px 20px rgba(0,0,0,0.15);}
+.present-block {display:inline-block; background:#FF69B4; color:white; padding:3px 8px; border-radius:50px; font-size:0.85em; margin-left:10px;}
+.project-tools {display:flex; flex-wrap:wrap; gap:10px; margin-top:10px;}
+.project-tools span {background:#FFE6F0; padding:5px 10px; border-radius:8px; font-size:0.85em; font-weight:bold;}
+.project-link {margin-top:10px; display:inline-block; color:#fff; background:linear-gradient(45deg,#FF69B4,#8A2BE2); padding:8px 15px; border-radius:8px; font-weight:bold; transition:0.3s;}
+.project-link:hover {transform:translateY(-3px) scale(1.05);}
 
-    /* Certificates toggle */
-    .view-certificate {display:inline-block; background:#8A2BE2; color:#fff; padding:8px 15px; border-radius:8px; cursor:pointer; margin-top:10px; transition:0.3s;}
-    .view-certificate:hover {background:#FF69B4;}
-    .certificate-list {display:none; margin-top:10px;}
-    .certificate-list p {background:#FFE6F0; padding:5px 10px; border-radius:5px; margin-bottom:5px;}
+/* Work/Internship Icons */
+.icon {margin-right:5px;}
+.company-icon::before {content:'🏢';}
+.location-icon::before {content:'📍';}
+.calendar-icon::before {content:'📅';}
+.remote-icon::before {content:'💻';}
 
-    /* Animations */
-    .fade-in {opacity:0; transform:translateY(20px); animation:fadeIn 1s forwards;}
-    @keyframes fadeIn {to {opacity:1; transform:translateY(0);}}
+/* Certificates toggle */
+.view-certificate {display:inline-block; background:#8A2BE2; color:#fff; padding:8px 15px; border-radius:8px; cursor:pointer; margin-top:10px; transition:0.3s;}
+.view-certificate:hover {background:#FF69B4;}
+.certificate-list {display:none; margin-top:10px;}
+.certificate-list img {width:300px; border-radius:8px; margin-bottom:5px;}
+.certificate-list p {background:#FFE6F0; padding:5px 10px; border-radius:5px; margin-bottom:5px;}
 
-    /* Footer */
-    footer {text-align:center; background:#8A2BE2; color:white; padding:20px; margin-top:40px;}
+/* Animations */
+.fade-in {opacity:0; transform:translateY(20px); animation:fadeIn 1s forwards;}
+@keyframes fadeIn {to {opacity:1; transform:translateY(0);}}
 
-    /* Media Queries */
-    @media(max-width:768px){
-      header {flex-direction:column; align-items:center;}
-      .skills-container {flex-direction:column;}
-    }
-  </style>
+/* Footer */
+footer {text-align:center; background:#8A2BE2; color:white; padding:20px; margin-top:40px;}
+
+/* Media Queries */
+@media(max-width:768px){
+  header {flex-direction:column; align-items:center;}
+  .skills-container {flex-direction:column;}
+}
+</style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="header-left fade-in">
-      <img src="profile.jpg" alt="Sayali Vaidya" class="profile-img">
+
+<!-- Header -->
+<header>
+  <div class="header-left fade-in">
+    <img src="profile.png" alt="Sayali Vaidya" class="profile-img">
+  </div>
+  <div class="header-right fade-in">
+    <h1>Sayali Vaidya</h1>
+    <p>Artificial Intelligence & Machine Learning Enthusiast</p>
+    <p>Email: <a href="mailto:sayalivadya1654@gmail.com">sayalivadya1654@gmail.com</a></p>
+    <p>Phone: 8767881176</p>
+    <p>GitHub: <a href="https://github.com/sayalivadya1654-cell" target="_blank">sayalivadya1654-cell</a> | LinkedIn: <a href="https://www.linkedin.com/in/sayali-vaidya-369a6b279?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">Sayali Vaidya</a></p>
+    <p><strong>Education:</strong> B.Tech in Information Technology, Kavikulguru Institute of Technology and Science, Ramtek (Pursuing)</p>
+  </div>
+</header>
+
+<!-- About Me -->
+<section id="about" class="fade-in">
+  <h2>About Me</h2>
+  <p>Aspiring AI/ML Engineer with hands-on experience in Python, Machine Learning, data preprocessing, and feature engineering. Passionate about building scalable data-driven solutions and predictive analytics initiatives.</p>
+</section>
+
+<!-- Resume + View Projects -->
+<section id="resume" class="fade-in">
+  <h2>Resume</h2>
+  <p><a href="Sayali_Vaidya_Resume.jpg" class="btn" download>Download Resume</a></p>
+  <p><button class="btn" onclick="document.getElementById('projects-section').scrollIntoView({behavior:'smooth'});">View Projects</button></p>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="fade-in">
+  <h2>Skills & Tools</h2>
+  <div class="skills-container">
+    <div class="skills-left">
+      <h3>Technical Skills & Tools</h3>
+      <div><p>Python</p><div class="skill-bar"><span style="width:80%">80%</span></div></div>
+      <div><p>SQL</p><div class="skill-bar"><span style="width:75%">75%</span></div></div>
+      <div><p>TensorFlow</p><div class="skill-bar"><span style="width:70%">70%</span></div></div>
+      <div><p>PyTorch</p><div class="skill-bar"><span style="width:70%">70%</span></div></div>
+      <div><p>Scikit-Learn</p><div class="skill-bar"><span style="width:85%">85%</span></div></div>
+      <div><p>Streamlit</p><div class="skill-bar"><span style="width:75%">75%</span></div></div>
+      <div><p>Flask / FastAPI</p><div class="skill-bar"><span style="width:70%">70%</span></div></div>
+      <div><p>Git / GitHub</p><div class="skill-bar"><span style="width:80%">80%</span></div></div>
+      <div><p>Jupyter Notebook / VS Code / PyCharm / Google Colab</p><div class="skill-bar"><span style="width:75%">75%</span></div></div>
     </div>
-    <div class="header-right fade-in">
-      <h1>Sayali Vaidya</h1>
-      <p>Artificial Intelligence & Machine Learning Enthusiast</p>
-      <p>Email: <a href="mailto:sayalivadya1654@gmail.com">sayalivadya1654@gmail.com</a></p>
-      <p>Phone: 8767881176</p>
-      <p>GitHub: <a href="https://github.com/sayalivadya1654-cell" target="_blank">sayalivadya1654-cell</a> | LinkedIn: <a href="https://www.linkedin.com/in/sayali-vaidya-369a6b279" target="_blank">Sayali Vaidya</a></p>
-      <p><strong>Education:</strong> B.Tech in Information Technology, Kavikulguru Institute of Technology and Science, Ramtek (Pursuing)</p>
+    <div class="skills-right">
+      <h3>Soft Skills</h3>
+      <div><p>Analytical Thinking</p><div class="skill-bar"><span style="width:85%">85%</span></div></div>
+      <div><p>Problem-Solving</p><div class="skill-bar"><span style="width:80%">80%</span></div></div>
+      <div><p>Team Collaboration</p><div class="skill-bar"><span style="width:80%">80%</span></div></div>
+      <div><p>Time Management</p><div class="skill-bar"><span style="width:75%">75%</span></div></div>
+      <div><p>Communication</p><div class="skill-bar"><span style="width:85%">85%</span></div></div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- About Me -->
-  <section id="about" class="fade-in">
-    <h2>About Me</h2>
-    <p>Aspiring AI/ML Engineer with hands-on experience in Python, Machine Learning, data preprocessing, and feature engineering. Passionate about building scalable data-driven solutions and predictive analytics initiatives.</p>
-  </section>
-
-  <!-- Resume + View Projects -->
-  <section id="resume" class="fade-in">
-    <h2>Resume</h2>
-    <p><a href="Sayali_Vaidya_Resume.jpg" download>Download Resume</a></p>
-    <p><button class="btn" onclick="document.getElementById('projects-section').scrollIntoView({behavior:'smooth'});">View Projects</button></p>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="fade-in">
-    <h2>Skills & Tools</h2>
-    <div class="skills-container">
-      <div class="skills-left">
-        <h3>Technical Skills & Tools</h3>
-        <div><p>Python</p><div class="skill-bar"><span data-width="80%">0%</span></div></div>
-        <div><p>SQL</p><div class="skill-bar"><span data-width="75%">0%</span></div></div>
-        <div><p>TensorFlow</p><div class="skill-bar"><span data-width="70%">0%</span></div></div>
-        <div><p>PyTorch</p><div class="skill-bar"><span data-width="70%">0%</span></div></div>
-        <div><p>Scikit-Learn</p><div class="skill-bar"><span data-width="85%">0%</span></div></div>
-        <div><p>Streamlit</p><div class="skill-bar"><span data-width="75%">0%</span></div></div>
-        <div><p>Flask / FastAPI</p><div class="skill-bar"><span data-width="70%">0%</span></div></div>
-        <div><p>Git / GitHub</p><div class="skill-bar"><span data-width="80%">0%</span></div></div>
-        <div><p>Jupyter Notebook / VS Code / PyCharm / Google Colab</p><div class="skill-bar"><span data-width="75%">0%</span></div></div>
+<!-- Projects Section -->
+<section id="projects-section" class="fade-in">
+  <h2>Projects</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Lexiscanauto (Legal Entity Extractor)</h3>
+      <p>Automatic legal entity extractor from unstructured PDF using OCR & NER pipelines.</p>
+      <div class="project-tools">
+        <span>Python</span><span>OCR</span><span>NER</span><span>PDF Parsing</span><span>Scikit-Learn</span><span>PyPDF2</span>
       </div>
-      <div class="skills-right">
-        <h3>Soft Skills</h3>
-        <div><p>Analytical Thinking</p><div class="skill-bar"><span data-width="85%">0%</span></div></div>
-        <div><p>Problem-Solving</p><div class="skill-bar"><span data-width="80%">0%</span></div></div>
-        <div><p>Team Collaboration</p><div class="skill-bar"><span data-width="80%">0%</span></div></div>
-        <div><p>Time Management</p><div class="skill-bar"><span data-width="75%">0%</span></div></div>
-        <div><p>Communication</p><div class="skill-bar"><span data-width="85%">0%</span></div></div>
+      <p>Duration: 2 months</p>
+      <a href="https://github.com/anjalipatel2025/LexiScanAuto" target="_blank" class="project-link">GitHub Link</a>
+    </div>
+
+    <div class="card">
+      <h3>Factory Guard AI-IOT Based Industrial Safety System</h3>
+      <p>IoT-based system monitoring real-time sensor data to predict workplace hazards.</p>
+      <div class="project-tools">
+        <span>Python</span><span>ML</span><span>IoT</span><span>Dashboard</span><span>Flask</span><span>TensorFlow</span>
+      </div>
+      <p>Duration: 2 months</p>
+      <a href="https://github.com/sayalivadya1654-cell/FactoryGuard-AI.git" target="_blank" class="project-link">GitHub Link</a>
+    </div>
+
+    <div class="card">
+      <h3>ML & Blockchain Fraud Detection System</h3>
+      <p>ML-based fraud detection chatbot with multilingual voice support and blockchain logging.</p>
+      <div class="project-tools">
+        <span>Python</span><span>ML</span><span>Blockchain</span><span>Chatbot</span><span>Dashboard</span><span>Visualization</span>
+      </div>
+      <p>Duration: 3 months</p>
+      <a href="https://github.com/sayalivadya1654-cell/Fraud-Detection-Chatbot-.git" target="_blank" class="project-link">GitHub Link</a>
+    </div>
+
+    <div class="card">
+      <h3>Early Detection of Anemia Using SVM</h3>
+      <p>SVM-based model to detect anemia from eye images with preprocessing and GUI.</p>
+      <div class="project-tools">
+        <span>Python</span><span>SVM</span><span>OpenCV</span><span>GUI</span><span>Scikit-Learn</span>
+      </div>
+      <p>Duration: 2 month</p>
+      <a href="https://github.com/sayalivadya1654-cell/ImageClassification-.git" target="_blank" class="project-link">GitHub Link</a>
+    </div>
+        </div> <!-- End of Projects Cards -->
+
+  <h2>Internships / Work Experience</h2>
+  <div class="cards">
+    <!-- Data Science & ML Intern (Ongoing) -->
+    <div class="card">
+      <h3>Data Science & Machine Learning Intern <span class="present-block">Present</span></h3>
+      <p><span class="company-icon"></span>Infotact Solution | <span class="location-icon"></span>Bengaluru | <span class="calendar-icon"></span>Dec 2025 - Present | <span class="remote-icon"></span>Remote</p>
+      <ul>
+        <li>Data engineering and preprocessing for IoT safety project.</li>
+        <li>Hyperparameter tuning and predictive modeling.</li>
+        <li>Explainable AI pipeline implementation.</li>
+        <li>Real-time monitoring and alert system development.</li>
+      </ul>
+      <a href="https://github.com/sayalivadya1654-cell" target="_blank" class="project-link">GitHub Link</a>
+    </div>
+
+    <!-- Python Developer Intern -->
+    <div class="card">
+      <h3>Python Developer Intern</h3>
+      <p><span class="company-icon"></span>Codec Technologies Pvt. Ltd | <span class="location-icon"></span>Mumbai | <span class="calendar-icon"></span>Sept 2025 | <span class="remote-icon"></span>Remote</p>
+      <ul>
+        <li>Worked on Python-based application development and automation tasks.</li>
+        <li>Hands-on experience with Python libraries and real-time workflows.</li>
+      </ul>
+      <a href="https://github.com/sayalivadya1654-cell" target="_blank" class="project-link">GitHub Link</a>
+      <button class="view-certificate" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block';">View Certificates</button>
+      <div class="certificate-list">
+        <img src="certificates/python-developer-certificate.jpg">
       </div>
     </div>
-  </section>
 
-  <!-- Projects Section -->
-  <section id="projects-section" class="fade-in">
-    <h2>Projects</h2>
-    <div class="cards">
-      <!-- Projects go here (you can reuse your previous card code) -->
+    <!-- Python Development Intern -->
+    <div class="card">
+      <h3>Python Development Intern</h3>
+      <p><span class="company-icon"></span>Cognifyz Technologies | <span class="location-icon"></span>Nagpur | <span class="calendar-icon"></span>July 2025 - Aug 2025 | <span class="remote-icon"></span>Remote</p>
+      <ul>
+        <li>Developed Python applications and ML solutions.</li>
+        <li>Applied machine learning techniques to real-world data.</li>
+      </ul>
+      <a href="https://github.com/sayalivadya1654-cell" target="_blank" class="project-link">GitHub Link</a>
+      <button class="view-certificate" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block';">View Certificates</button>
+      <div class="certificate-list">
+        <img src="certificates/python-developer-certificate2.jpg">
+      </div>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 Sayali Vaidya. All Rights Reserved.</p>
-  </footer>
+    <!-- Machine Learning Intern -->
+    <div class="card">
+      <h3>Machine Learning Intern</h3>
+      <p><span class="company-icon"></span>Cognifyz Technologies | <span class="location-icon"></span>Nagpur | <span class="calendar-icon"></span>June 2025 - July 2025 | <span class="remote-icon"></span>Remote</p>
+      <ul>
+        <li>Worked on Python programming and applied ML for real-world data analysis.</li>
+        <li>Developed and tuned ML models for prediction tasks.</li>
+      </ul>
+      <a href="https://github.com/sayalivadya1654-cell" target="_blank" class="project-link">GitHub Link</a>
+      <button class="view-certificate" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block';">View Certificates</button>
+      <div class="certificate-list">
+        <img src="certificates/ml-internship.jpg">
+      </div>
+    </div>
 
-  <script>
-    // Skill bar animation
-    const skills = document.querySelectorAll('.skill-bar span');
-    window.addEventListener('scroll', () => {
-      const triggerBottom = window.innerHeight;
-      skills.forEach(skill => {
-        const skillTop = skill.getBoundingClientRect().top;
-        if(skillTop < triggerBottom - 50){
-          skill.style.width = skill.getAttribute('data-width');
-          skill.textContent = skill.getAttribute('data-width');
-        }
-      });
+    <!-- Gaming & AR Intern -->
+    <div class="card">
+      <h3>Gaming & Augmented Reality Intern</h3>
+      <p><span class="company-icon"></span>Dnnovate Technologies Pvt. Ltd | <span class="location-icon"></span>Pune | <span class="calendar-icon"></span>Jan - Apr 2024 | <span class="remote-icon"></span>Remote</p>
+      <ul>
+        <li>Designed 3D environments, animations, and user interactions.</li>
+        <li>Practical experience in game development logic and scene design.</li>
+      </ul>
+      <a href="https://github.com/sayalivadya1654-cell" target="_blank" class="project-link">GitHub Link</a>
+      <button class="view-certificate" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block';">View Certificates</button>
+      <div class="certificate-list">
+        <img src="certificates/augmented-reality-gaming-certificate.jpg">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications Section -->
+<section id="certifications" class="fade-in">
+  <h2>Certifications</h2>
+  <div class="certificate-list" style="display:block;">
+    <p>Employability Skills Workshop Certificate by KEYOR</p>
+    <p>Internship Common Aptitude Test Certificate by ICAT</p>
+    <p>Learn Python Masterclass Certificate by Preplnsta Prime</p>
+    <p>Introduction to Image Generation by Simplilearn and Google Cloud</p>
+    <p>AWS Networking Basic by Simplilearn and Microsoft</p>
+    <p>Introduction to Generation AI Studio by Skillup and Google Cloud</p>
+    <p>Advanced Artificial Intelligence with Python by Luster Mind</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 Sayali Vaidya. All Rights Reserved.</p>
+</footer>
+
+<!-- Scripts -->
+<script>
+  // Skills animation
+  const skills = document.querySelectorAll('.skill-bar span');
+  window.addEventListener('scroll', () => {
+    const triggerBottom = window.innerHeight;
+    skills.forEach(skill => {
+      const skillTop = skill.getBoundingClientRect().top;
+      if(skillTop < triggerBottom - 50){
+        skill.style.width = skill.style.width;
+      }
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
