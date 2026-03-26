@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-primary: #38bdf8; /* Sky 400 */
+  --color-secondary: #0f172a; /* Slate 900 */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-slate-950 text-slate-50 antialiased overflow-x-hidden;
+  }
+}
+
+/* Custom Glassmorphism Utility */
+.glass {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.5);
+}
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .no-print, nav, footer, canvas, button, .splash-screen {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+  
+  section {
+    page-break-inside: avoid;
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  h1, h2, h3 {
+    color: black !important;
+  }
+  
+  p, li, span {
+    color: #333 !important;
+  }
+}
+
+.print-only {
+  display: none;
+}
